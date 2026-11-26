@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Top Controls -->
+  <div class="top-controls">
+    <button id="replay-btn" class="icon-btn" title="Replay">↻ Replay</button>
+    <button id="mic-btn" class="icon-btn" title="Use Mic to Blow">🎤 Mic Off</button>
+    <button id="mute-btn" class="icon-btn" title="Toggle Sound">🔊 Sound On</button>
+  </div>
+
+  <!-- STAGE 1: BIRTHDAY CAKE -->
+  <main id="cake-stage" class="stage active">
+    <p id="blow-hint" class="hint-text">Touch to blow</p>
+
+    <div id="cake-wrapper" class="cake-wrapper" role="button" tabindex="0" aria-label="Touch to blow out candles">
+      <!-- Candles (Step 8) -->
+      <div class="candles-row" id="candles-row"></div>
+
+      <!-- White Cream Frosting + Drips (Step 7) -->
+      <div class="cake-layer cream-top" data-step="7">
+        <div class="drip d1"></div>
+        <div class="drip d2"></div>
+        <div class="drip d3"></div>
+        <div class="drip d4"></div>
+        <div class="drip d5"></div>
+        <div class="drip d6"></div>
+        <div class="drip d7"></div>
+      </div>
+
+      <!-- Chiffon Layer 3 (Step 6) -->
+      <div class="cake-layer chiffon" data-step="6"></div>
+
+      <!-- Chocolate Syrup 2 (Step 5) -->
+      <div class="cake-layer syrup" data-step="5"></div>
+
+      <!-- Chiffon Layer 2 (Step 4) -->
+      <div class="cake-layer chiffon" data-step="4"></div>
+
+      <!-- Chocolate Syrup 1 (Step 3) -->
+      <div class="cake-layer syrup" data-step="3"></div>
+
+      <!-- Chiffon Layer 1 (Step 2) -->
+      <div class="cake-layer chiffon" data-step="2"></div>
+
+      <!-- Plate (Step 1) -->
+      <div class="cake-plate" data-step="1"></div>
+    </div>
+
+    <div id="birthday-message" class="birthday-message">
+      <h1>Happy Birthday, Gabnot •⩊• !</h1>
+      <p class="sub-wish">Mabuhay ka hangga't sa gusto mo✨</p>
+      <button id="to-flower-btn" class="primary-btn">Next: A Flower for You👉🌸</button>
+    </div>
+  </main>
+
+  <!-- STAGE 2: ASCII LILIES -->
+  <section id="flower-stage" class="stage" aria-label="ASCII blooming lilies">
+    <canvas id="screen" aria-hidden="true"></canvas>
+
+    <div class="flower-actions">
+      <button id="palette-btn" class="secondary-btn" type="button">🎨 Palette</button>
+      <button id="back-to-cake-btn" class="secondary-btn" type="button">← Back to Cake</button>
+    </div>
+  </section>
+
+  <!-- Toast Notification -->
+  <div id="status-toast" class="status-toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
